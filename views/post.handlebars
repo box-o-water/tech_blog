@@ -1,0 +1,17 @@
+<div class="box">
+  <h2>{{name}}</h2>
+  <p>{{title}}</p>
+  <p>Created by {{user.username}} on {{format_date date_created}}</p>
+  <p>
+    {{content}}
+  </p>
+<form class="box">
+  <div class="field">
+    <label class="label">Comment</label>
+    <div class="control">
+      <input class="textarea" type="text">
+    </div>
+  </div>
+  <button class="button">Submit</button>
+</form>
+</div>
