@@ -8,19 +8,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 <body>
-  <nav>
-    <!-- Conditionally render login or logout links -->
-    {{!-- {{#if logged_in}} --}}
-    <a href="/">home</a>
-    <a href="/dashboard">dashboard</a>
-    <a href="/logout">logout</a>
-    {{!-- {{else}} --}}
-    <a href="/login">login</a>
-    {{!-- {{/if}} --}}
-  </nav>
-  <h1>Tech Blog</h1>
+  <div>
+    <header>
+      <h1>
+        <a href="/">Tech Blog</a>
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/dashboard">dashboard</a> |
+        <button id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
     <main>
+      <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+    <footer>
+      
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>
