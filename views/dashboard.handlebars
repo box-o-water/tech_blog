@@ -1,32 +1,39 @@
-<h2>Welcome, {{username}}!</h2>
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
 
-<h3>Create a New Post:</h3>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New post:</h3>
 
-<form>
-  <div>
-    <label for="post-title">title:</label>
-    <input class="form-input" type="text" id="post-title" name="post-title" />
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-title">post title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">description:</label>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="post-content">content:</label>
-    <textarea class="form-input" id="post-content" name="post-content"></textarea>
-  </div>
-  <div class="form-group">
-    <button type="submit">Create</button>
-  </div>
-</form>
 
   {{#if posts.length}}
-  <div>
-    <h3>Current Posts:</h3>
+  <div class="col-md-6 post-list">
+    <h3>Current posts:</h3>
 
     {{#each posts as |post|}}
-    <div>
-      <div>
+    <div class="row mb-2">
+      <div class="col-md-8">
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
-      <div>
-        <button data-id="{{post.id}}">DELETE</button>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
