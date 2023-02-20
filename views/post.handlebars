@@ -5,13 +5,16 @@
   <p>
     {{content}}
   </p>
-<form class="box">
-  <div class="field">
-    <label class="label">Comment</label>
-    <div class="control">
-      <input class="textarea" type="text">
+
+  <form class="form new-comment-form">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-input" id="comment" name="comment"></textarea>
     </div>
-  </div>
-  <button class="button">Submit</button>
-</form>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </form>
 </div>
+
+<script src="/js/post.js"></script>
