@@ -34,8 +34,11 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
+<<<<<<< HEAD
         },
         {
+=======
+>>>>>>> b6580aac0203588dd91320eccdc83c6fc6463171
           model: Comment,
           // attributes: ['username'],
         },
